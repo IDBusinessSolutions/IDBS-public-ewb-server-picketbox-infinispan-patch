@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <artifactId>ewb-server-picketbox-infinispan-patch</artifactId>
+    <description>
+        This patches the picketbox-infinispan extension to ensure unchecked exceptions in login modules are not eaten.
+    </description>
+
+    <parent>
+        <groupId>com.idbs.ewb.server</groupId>
+        <artifactId>ewb-server</artifactId>
+        <version>10.3.0-SNAPSHOT</version>
+        <relativePath>../ewb-server</relativePath>
+    </parent>
+
+	<dependencies>
+	   <dependency>
+	       <groupId>org.picketbox</groupId>
+	       <artifactId>picketbox-infinispan</artifactId>
+           <version>${picketbox.version}</version>
+           <scope>provided</scope>
+	   </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.3.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.6.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>1.6.6</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+
+</project>
